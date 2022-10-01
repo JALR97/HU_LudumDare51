@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-    
+
+    public Animator animator;
+
     [SerializeField] private Rigidbody2D thisRigidbody;
     [SerializeField] private float speed;
     private Vector2 direction;
@@ -16,6 +18,8 @@ public class PlayerController : MonoBehaviour {
 
         if (direction.magnitude > 0) {
             thisRigidbody.velocity = direction * (speed * Time.deltaTime);
+        animator.SetTrigger("Moving");
         }
+        
     }
 }
