@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private float speed;
     private Vector2 direction;
     
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         direction.x = Input.GetAxisRaw("Horizontal");
         direction.y = Input.GetAxisRaw("Vertical");
