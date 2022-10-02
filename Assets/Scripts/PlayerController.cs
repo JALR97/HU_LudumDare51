@@ -35,11 +35,11 @@ public class PlayerController : MonoBehaviour {
             thisRigidbody.velocity = direction * (speed * Time.deltaTime);
         animator.SetTrigger("Moving");
         }
-        if (direction.x > 0 && facingRight)
+        if (direction.x > 0 && !facingRight)
         {
             Flip();
         }
-        else if (direction.x < 0 && !facingRight)
+        else if (direction.x < 0 && facingRight)
         {
             Flip();
         }
@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void ResetHealth() {
+        maxHealth=100f;
         health = maxHealth;
     }
 
