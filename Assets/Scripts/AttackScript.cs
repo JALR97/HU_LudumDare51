@@ -8,7 +8,7 @@ public class AttackScript : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
-    
+   
 
     // Start is called before the first frame update
     void Start()
