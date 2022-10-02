@@ -8,7 +8,7 @@ public class AttackScript : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
-   
+    public int attackDamage= 50;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +38,8 @@ public class AttackScript : MonoBehaviour
         //damage
         foreach(Collider2D enemy in hitEnemies)
         {
-            Debug.Log ("We hit" + enemy.name);
+            Debug.Log ("We hit " + enemy.name);
+            enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
         }
 
     }
