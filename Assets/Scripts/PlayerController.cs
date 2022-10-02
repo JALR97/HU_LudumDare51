@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     //Components set in editor
+    [SerializeField] private GameObject gameoverUI;
     [SerializeField] private Animator animator;
     [SerializeField] private Rigidbody2D thisRigidbody;
     
@@ -66,7 +67,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void Die() {
-        //Game over behavior
+        gameoverUI.SetActive(true);
         Debug.Log("Gameover");
         Time.timeScale = 0;
     }
