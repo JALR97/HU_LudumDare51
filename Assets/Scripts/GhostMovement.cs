@@ -7,7 +7,6 @@ using Random = UnityEngine.Random;
 public class GhostMovement : MonoBehaviour {
     
     //Components needed to be set in editor
-    [SerializeField] private Transform player;
     [SerializeField] private Rigidbody2D thisRigidbody;
     
     //Game balance Variables
@@ -19,6 +18,11 @@ public class GhostMovement : MonoBehaviour {
     private bool chasing; //being in vision range of the player means ghost will chase
     private Vector2 moveDirection;
     private float timer;
+    private Transform player;
+
+    private void Start() {
+        player = GameObject.FindWithTag("Player").transform;
+    }
 
     private void Update() {
         //As a first step the ghost enemy is idle until the player gets inside the vision range

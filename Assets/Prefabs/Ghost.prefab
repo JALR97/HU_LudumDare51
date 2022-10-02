@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 369461990979737588}
   - component: {fileID: 369461990979737595}
   - component: {fileID: 5736374476266798452}
-  m_Layer: 0
+  - component: {fileID: 1677815227538073274}
+  m_Layer: 7
   m_Name: Ghost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +108,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &369461990979737595
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -136,8 +137,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c97ebba917be6640acdf2af86950512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  thisRigidbody: {fileID: 0}
-  visionRange: 0
-  speed: 0
-  singleMoveTime: 1
+  player: {fileID: 8905839289419571390, guid: f6a33cb46cf1912449e649705843d92f, type: 3}
+  thisRigidbody: {fileID: 369461990979737588}
+  visionRange: 5
+  speed: 300
+  MoveTimeBase: 1
+  MoveTimeReal: 0
+--- !u!114 &1677815227538073274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369461990979737594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ef03b8dee85b8a46921b1bb545aa753, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
