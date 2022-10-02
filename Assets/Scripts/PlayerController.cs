@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour {
     //Balance variables
     [SerializeField] private float speed;
     [SerializeField] private float maxHealth;
-    
+     private bool facingRight = true;
     //Process variables
     private Vector2 direction;
     private float health;
@@ -29,11 +29,28 @@ public class PlayerController : MonoBehaviour {
         direction.x = Input.GetAxisRaw("Horizontal");
         direction.y = Input.GetAxisRaw("Vertical");
         direction.Normalize();
+        
 
         if (direction.magnitude > 0) {
             thisRigidbody.velocity = direction * (speed * Time.deltaTime);
         animator.SetTrigger("Moving");
         }
+        if (direction.x > 0 && facingRight)
+        {
+            Flip();
+        }
+        else if (direction.x < 0 && !facingRight)
+        {
+            Flip();
+        }
+    }
+    private void Flip()
+    {
+        Vector3 currentScale = gameObject.transform.localScale;
+        currentScale.x*= -1;
+        gameObject.transform.localScale = currentScale;
+
+        facingRight =! facingRight;
     }
 
     private void ResetHealth() {
