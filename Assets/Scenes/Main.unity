@@ -14562,18 +14562,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8905839289419571364, guid: f6a33cb46cf1912449e649705843d92f, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8905839289419571387, guid: f6a33cb46cf1912449e649705843d92f, type: 3}
-      propertyPath: m_AngularDrag
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 8905839289419571387, guid: f6a33cb46cf1912449e649705843d92f, type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 8905839289419571390, guid: f6a33cb46cf1912449e649705843d92f, type: 3}
       propertyPath: m_RootOrder
       value: 6
