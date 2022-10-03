@@ -40,7 +40,7 @@ public class AttackScript : MonoBehaviour
     void Attack()
     {
         //play attack animation
-        animator.SetTrigger("Attack");
+        //animator.SetTrigger("Attack");
         attackPoint.gameObject.SetActive(true);
         
         //detect enemies in range of attack

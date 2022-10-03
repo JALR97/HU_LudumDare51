@@ -37,12 +37,17 @@ public class SwingingWeapon : MonoBehaviour
 
     private void Update() {
         var rotationSpeed = rotationCurve.Evaluate(timer / lifetime);
-        if (izquierda) {
+        
+
+        if (!izquierda) {
             rotationSpeed *= -1;
         }
+        
         sprite.Rotate(Vector3.back * (rotationSpeed * Time.deltaTime));
         
         timer += Time.deltaTime;
+
+       
         if (timer >= lifetime) {
             StartCoroutine(End());
         }

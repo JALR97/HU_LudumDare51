@@ -19,6 +19,12 @@ public class PlayerController : MonoBehaviour {
     //Process variables
     private Vector2 direction;
     private Vector2 facing;
+
+     private float flip;
+      private float adjustx = 0;
+      private float adjusty = 0;
+      
+    
     private float health;
     private bool facingRight = true;
     private bool attacking;
@@ -45,21 +51,39 @@ public class PlayerController : MonoBehaviour {
         if (facing.x != 1 && facing.x != 0) {
             facing.y = 0;
             facing.Normalize();
-            Debug.Log("Diagonal");
+            Debug.Log("Right");
+            flip= 1;
+            adjustx= 0;
+            adjusty = 0;
+
         }
         int rotation = 0;
+
         if ((int)facing.x <= -1) {
             Debug.Log("Left");
-            rotation = 180;
+            rotation = -0;
+            flip=1;
+             adjustx= 0;
+            adjusty = 0;
+            //good -0
         }
         else if((int)facing.y >= 1) {
             Debug.Log("up");
-            rotation = 90;
+            rotation =0;
+            flip=1;
+            adjustx= 0;
+            adjusty = 0;
+            //good 0
         }else if((int)facing.y <= -1) {
             Debug.Log("down");
-            rotation = -90;
+            rotation = 90;
+            flip=-1;
+            adjustx= 0;
+            adjusty = 0;
+            //good 90
         }
         //Instantiation of the current weapon, position based on the facing direction
+        //var temp = new Vector3 (adjustx,adjusty,0);
         Instantiate(weapons[(int)currentWeapon], transform.position + (Vector3)facing * attackRange, Quaternion.Euler(0, 0, rotation));
     }
 
@@ -77,7 +101,7 @@ public class PlayerController : MonoBehaviour {
         if (direction.magnitude > 0) {
             facing = direction;
             thisRigidbody.velocity = direction * (speed * Time.deltaTime);
-        animator.SetTrigger("Moving");
+        //animator.SetTrigger("Moving");
         }
         if (direction.x > 0 && !facingRight)
         {
