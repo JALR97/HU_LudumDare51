@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300004, guid: ae297123f091bbf4e8f1835eb98fb293, type: 3}
+  m_Sprite: {fileID: -591829824, guid: 728c0728246476c4facd350a8f05d158, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -108,7 +108,8 @@ MonoBehaviour:
   - {fileID: 6715234828336240070, guid: 46a5059b2aaf2f642a078fd9c21ca28e, type: 3}
   speed: 500
   maxHealth: 0
-  attackRange: 5
+  attackRange: 1
+  currentWeapon: 0
 --- !u!50 &6631639027861509128
 Rigidbody2D:
   serializedVersion: 4
@@ -126,7 +127,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -149,7 +150,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   attackDamage: 50
-  coolDown: 1
+  coolDown: 0
   coolDownTimer: 0
 --- !u!95 &6631639027861509129
 Animator:
@@ -184,6 +185,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.8}
-  m_Size: {x: 0.5, y: 0.9}
+  m_Offset: {x: -0.0069274902, y: -0.027196584}
+  m_Size: {x: 0.3753128, y: 0.62164867}
   m_Direction: 0
