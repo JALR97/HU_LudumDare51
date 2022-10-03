@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: -591829824, guid: 728c0728246476c4facd350a8f05d158, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &6631639027861509133
@@ -105,6 +105,7 @@ MonoBehaviour:
   thisRigidbody: {fileID: 6631639027861509128}
   weapons:
   - {fileID: 6715234828336240070, guid: 46a5059b2aaf2f642a078fd9c21ca28e, type: 3}
+  healthBar: {fileID: 0}
   speed: 500
   maxHealth: 0
   attackRange: 1

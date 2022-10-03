@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 
@@ -10,10 +11,11 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private Animator animator;
     [SerializeField] private Rigidbody2D thisRigidbody;
     [SerializeField] private GameObject[] weapons;
+    public healthbar healthbar;
     
     //Balance variables
     [SerializeField] private float speed;
-    [SerializeField] private float maxHealth;
+    [SerializeField] private int maxHealth;
     [SerializeField] private float attackRange;
      
     //Process variables
@@ -25,7 +27,7 @@ public class PlayerController : MonoBehaviour {
       private float adjusty = 0;
       
     
-    private float health;
+    private int health;
     private bool facingRight = true;
     private bool attacking;
     [SerializeField] private WeaponCodes currentWeapon = WeaponCodes.SWORD;
@@ -55,12 +57,16 @@ public class PlayerController : MonoBehaviour {
     private void Start() {
         ResetHealth();
         ChangeAnimation(PLAYER_IDLE);
+       // healthbar.SetMaxHealth(health);
+        //healthbar.SetMaxHealth(100);
     }
 
     private void Update() {
         if (Input.GetKeyDown(KeyCode.Space) && !attacking) {
             attacking = true;
             Attack();
+            
+            
         }
     }
     
@@ -151,12 +157,13 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void ResetHealth() {
-        maxHealth=100f;
+        maxHealth=100;
         health = maxHealth;
     }
 
     public void TakeDamageP(int dmg) {
         health -= dmg;
+        healthbar.SetHealth(health);
         if (health <= 0) {
             Die();
         }
