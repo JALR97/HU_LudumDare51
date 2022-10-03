@@ -74,7 +74,6 @@ public class PlayerController : MonoBehaviour {
         if (facing.x != 1 && facing.x != 0) {
             facing.y = 0;
             facing.Normalize();
-            Debug.Log("Right");
             flip= 1;
             adjustx= 0;
             adjusty = 0;
@@ -83,7 +82,6 @@ public class PlayerController : MonoBehaviour {
         int rotation = 0;
 
         if ((int)facing.x <= -1) {
-            Debug.Log("Left");
             rotation = -0;
             flip=1;
              adjustx= 0;
@@ -91,14 +89,12 @@ public class PlayerController : MonoBehaviour {
             //good -0
         }
         else if((int)facing.y >= 1) {
-            Debug.Log("up");
             rotation =0;
             flip=1;
             adjustx= 0;
             adjusty = 0;
             //good 0
         }else if((int)facing.y <= -1) {
-            Debug.Log("down");
             rotation = 90;
             flip=-1;
             adjustx= 0;
@@ -138,14 +134,14 @@ public class PlayerController : MonoBehaviour {
             ChangeAnimation(PLAYER_IDLE);
         }
         
-        if (direction.x > 0 && !facingRight)
+       /* if (direction.x > 0 && !facingRight)
         {
             Flip();
         }
         else if (direction.x < 0 && facingRight)
         {
             Flip();
-        }
+        }*/
     }
     private void Flip()
     {

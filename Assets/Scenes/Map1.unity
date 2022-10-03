@@ -1013,11 +1013,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6631639027861509131, guid: f6a33cb46cf1912449e649705843d92f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.26921
+      value: -5.97
       objectReference: {fileID: 0}
     - target: {fileID: 6631639027861509131, guid: f6a33cb46cf1912449e649705843d92f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.0733266
+      value: -5.85
       objectReference: {fileID: 0}
     - target: {fileID: 6631639027861509131, guid: f6a33cb46cf1912449e649705843d92f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1055,6 +1055,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6631639027861509133, guid: f6a33cb46cf1912449e649705843d92f, type: 3}
+      propertyPath: currentWeapon
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6a33cb46cf1912449e649705843d92f, type: 3}
 --- !u!1 &1631646757
@@ -1069,6 +1073,7 @@ GameObject:
   - component: {fileID: 1631646759}
   - component: {fileID: 1631646758}
   - component: {fileID: 1631646761}
+  - component: {fileID: 1631646762}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1156,6 +1161,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 917782297}
   followSpeed: 5
+--- !u!114 &1631646762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631646757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 055fce0b5b6d03d45a031a2ef0185050, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioSource: {fileID: 0}
 --- !u!1 &1844187987
 GameObject:
   m_ObjectHideFlags: 0
