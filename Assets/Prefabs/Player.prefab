@@ -111,7 +111,7 @@ MonoBehaviour:
   speed: 400
   maxHealth: 100
   attackRange: 0.4
-  currentWeapon: 0
+  currentWeapon: 1
 --- !u!50 &6631639027861509128
 Rigidbody2D:
   serializedVersion: 4

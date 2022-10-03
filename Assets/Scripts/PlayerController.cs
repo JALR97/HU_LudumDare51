@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private GameObject[] weapons;
     public healthbar healthbar;
     
+    [SerializeField] private AudioManager _audioManager;
+    [SerializeField] private AudioClip switchWeaponSound;
+
     //Balance variables
     [SerializeField] private float speed;
     [SerializeField] private int maxHealth;
@@ -21,12 +24,12 @@ public class PlayerController : MonoBehaviour {
     //Process variables
     private Vector2 direction;
     private Vector2 facing;
+    private float timer;
 
-     private float flip;
-      private float adjustx = 0;
-      private float adjusty = 0;
-      
-    
+    private float flip;
+    private float adjustx = 0;
+    private float adjusty = 0;
+
     private int health;
     private bool facingRight = true;
     private bool attacking;
@@ -57,8 +60,7 @@ public class PlayerController : MonoBehaviour {
     private void Start() {
         ResetHealth();
         ChangeAnimation(PLAYER_IDLE);
-       healthbar.SetMaxHealth(health);
-      
+        healthbar.SetMaxHealth(health);
     }
 
     private void Update() {
@@ -67,6 +69,13 @@ public class PlayerController : MonoBehaviour {
             Attack();
             
             
+        }
+
+        timer += Time.deltaTime;
+        if (timer >= 10) {
+            currentWeapon = (WeaponCodes)UnityEngine.Random.Range(0, 2);
+            _audioManager.Play(switchWeaponSound);
+            timer = 0;
         }
     }
     
@@ -167,6 +176,7 @@ public class PlayerController : MonoBehaviour {
 
     private void Die() {
         gameoverUI.SetActive(true);
+        
         Debug.Log("Gameover");
         Time.timeScale = 0;
     }
