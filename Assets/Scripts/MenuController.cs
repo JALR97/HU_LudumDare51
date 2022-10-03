@@ -7,5 +7,6 @@ public class MenuController : MonoBehaviour
 {
     public void PlayGame() {
         SceneManager.LoadScene("Main");
+        Time.timeScale = 1;
     }
 }

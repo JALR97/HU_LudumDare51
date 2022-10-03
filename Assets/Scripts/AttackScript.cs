@@ -20,17 +20,16 @@ public class AttackScript : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {    if (coolDownTimer >0)
+    {   if (coolDownTimer >0)
         {
             coolDownTimer-= Time.deltaTime;
         }
-         if (coolDownTimer <0)
+        if (coolDownTimer <0)
         {
             coolDownTimer=0;
         }
-          if (Input.GetKeyDown(KeyCode.Space) && coolDownTimer == 0)
+        if (Input.GetKeyDown(KeyCode.Space) && coolDownTimer == 0)
         {
-            
             Attack();
             coolDownTimer = coolDown;
         }
@@ -40,10 +39,10 @@ public class AttackScript : MonoBehaviour
 
     void Attack()
     {
-       
         //play attack animation
         animator.SetTrigger("Attack");
-
+        attackPoint.gameObject.SetActive(true);
+        
         //detect enemies in range of attack
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         //damage
@@ -52,7 +51,7 @@ public class AttackScript : MonoBehaviour
            Debug.Log ("We hit " + enemy.name);
             enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
         }
-
+        attackPoint.gameObject.SetActive(false);
     }
 
     void OnDrawGizmosSelected(){
