@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
 
    private IEnumerator waitDelayDie()
     {
-        yield return new WaitForSeconds(0.5);
+        yield return new WaitForSeconds(0.5f);
         Die();
     }
    

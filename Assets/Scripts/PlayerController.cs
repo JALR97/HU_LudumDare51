@@ -57,8 +57,8 @@ public class PlayerController : MonoBehaviour {
     private void Start() {
         ResetHealth();
         ChangeAnimation(PLAYER_IDLE);
-       // healthbar.SetMaxHealth(health);
-        //healthbar.SetMaxHealth(100);
+       healthbar.SetMaxHealth(health);
+      
     }
 
     private void Update() {

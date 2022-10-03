@@ -107,10 +107,11 @@ MonoBehaviour:
   weapons:
   - {fileID: 6715234828336240070, guid: 46a5059b2aaf2f642a078fd9c21ca28e, type: 3}
   - {fileID: 6715234828336240070, guid: f5be8319e2db0524280f2f9ea56549e9, type: 3}
+  healthbar: {fileID: 0}
   speed: 400
   maxHealth: 100
   attackRange: 0.4
-  currentWeapon: 1
+  currentWeapon: 0
 --- !u!50 &6631639027861509128
 Rigidbody2D:
   serializedVersion: 4
