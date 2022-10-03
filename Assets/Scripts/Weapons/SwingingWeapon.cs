@@ -8,7 +8,8 @@ public class SwingingWeapon : MonoBehaviour
 {
     //Components set in editor
     [SerializeField] private Transform sprite;
-    
+    [SerializeField] private AudioManager _audioManager;
+    [SerializeField] private AudioClip attackSound;
     
     //Balance variables
     [SerializeField] private float lifetime;
@@ -26,6 +27,9 @@ public class SwingingWeapon : MonoBehaviour
         //We deactivate the parent sprite since the players are not to see it.
         GetComponent<SpriteRenderer>().enabled = false;
         playerC = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+
+        _audioManager = GameObject.FindWithTag("MainCamera").GetComponent<AudioManager>();
+        _audioManager.Play(attackSound);
         
         if ((transform.position - playerC.transform.position).x > 0) {
             Debug.Log("Flipping");

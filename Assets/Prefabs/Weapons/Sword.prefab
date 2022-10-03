@@ -116,43 +116,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 2838290973396937784}
-  lifetime: 0.01
+  _audioManager: {fileID: 0}
+  attackSound: {fileID: 8300000, guid: 0588165372508734d9fc0055b46fe451, type: 3}
+  lifetime: 0.15
   damage: 50
   knockback: 15
   rotationCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: -0.37089157
-      value: 231.01503
-      inSlope: 100.68906
-      outSlope: 100.68906
+      time: -0.52798676
+      value: 350.23676
+      inSlope: 109.3175
+      outSlope: 109.3175
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.37038428
+      outWeight: 0.054443713
     - serializedVersion: 3
-      time: 0.5235945
-      value: 250.2245
-      inSlope: -42.55712
-      outSlope: -42.55712
+      time: 0.9074141
+      value: 299.5965
+      inSlope: -297.6833
+      outSlope: -297.6833
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 1.2184277
-      value: 176.16246
-      inSlope: -106.589676
-      outSlope: -106.589676
-      tangentMode: 34
+      time: 0.994154
+      value: 251.0146
+      inSlope: -139.78722
+      outSlope: -139.78722
+      tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.32608283
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  coolDown: 0.5
+  coolDown: 0.2
 --- !u!1 &9073584842064188431
 GameObject:
   m_ObjectHideFlags: 0
