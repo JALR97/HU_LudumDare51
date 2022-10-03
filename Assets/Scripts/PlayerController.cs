@@ -5,6 +5,18 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
+     /*public void OnTriggerEnter2D(Collider2D player) 
+       {
+        if (player.gameObject.CompareTag("Player"))
+        {
+            Rigidbody2D rbp = player.GetComponent <Rigidbody2D>();
+            if (rbp != null)
+            {
+               
+            }
+        }
+       }*/
+
     //Components set in editor
     [SerializeField] private Animator animator;
     [SerializeField] private Rigidbody2D thisRigidbody;
@@ -58,8 +70,10 @@ public class PlayerController : MonoBehaviour {
         health = maxHealth;
     }
 
-    public void TakeDamage(int dmg) {
+    public void TakeDamageP(int dmg) {
         health -= dmg;
+        
+        
         if (health <= 0) {
             Die();
         }

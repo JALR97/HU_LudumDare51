@@ -15,6 +15,10 @@ public class GhostMovement : MonoBehaviour {
     [SerializeField] private float MoveTimeBase = 1.0f; //how long before changing to other type of movement
     [SerializeField] private float MoveTimeReal;
     //Process and status variables
+    //knockback timer
+    public float coolDownKB = 0.5f;
+    public float coolDownKBTimer;
+  
     private bool chasing; //being in vision range of the player means ghost will chase
     private Vector2 moveDirection;
     private float timer;
@@ -25,23 +29,37 @@ public class GhostMovement : MonoBehaviour {
     }
 
     private void Update() {
+        if (coolDownKBTimer >0)
+        {
+            coolDownKBTimer-= Time.deltaTime;
+        }
+         if (coolDownKBTimer <0)
+        {
+            coolDownKBTimer=0;
+        }
+        
         //As a first step the ghost enemy is idle until the player gets inside the vision range
         if(!chasing && (player.position - transform.position).magnitude < visionRange) {
+            
             chasing = true;
             ChooseDirection(); //A direction is chosen in relation to the player
             timer = 0;
+            
         }
         //Timer is always running, but the reset when a new direction is chosen allows to check
         //enough time has passed before starting a new move in a new direction
         timer += Time.deltaTime;
         if (timer >= MoveTimeReal) {
+
             chasing = false;
         }
     }
 
     private void FixedUpdate() {
-        if (chasing) { //As long as the chasing variable is true, the movement will continue.
-            thisRigidbody.velocity = moveDirection.normalized * (speed * Time.deltaTime);    
+        if (chasing && coolDownKBTimer == 0) { //As long as the chasing variable is true, the movement will continue.
+            thisRigidbody.velocity = moveDirection.normalized * (speed * Time.deltaTime);  
+            //Debug.Log("Knockbacktimer in");  
+            coolDownKBTimer = coolDownKB;
         }
     }
 

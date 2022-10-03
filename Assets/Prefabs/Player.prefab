@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6631639027861509142}
   - component: {fileID: 6631639027861509129}
   - component: {fileID: 4116786402726883634}
-  - component: {fileID: 7472950442963235336}
+  - component: {fileID: -6306020791303994013}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -127,7 +127,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &6631639027861509142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,7 +185,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.8}
   m_Size: {x: 0.5, y: 0.9}
   m_Direction: 0
---- !u!114 &7472950442963235336
+--- !u!114 &-6306020791303994013
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -194,10 +194,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6631639027861509132}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b75fede08d035b44a7e21cda5ed41e0, type: 3}
+  m_Script: {fileID: 11500000, guid: 06c5a9df8a7ed1847a051b37525c1972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 5
+  knocktime: 1
+  power: 30000
+  knockedback: 0
+  attackPoint: {fileID: 0}
 --- !u!1 &6631639028223529314
 GameObject:
   m_ObjectHideFlags: 0

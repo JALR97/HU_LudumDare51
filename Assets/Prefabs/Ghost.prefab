@@ -138,10 +138,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisRigidbody: {fileID: 369461990979737588}
-  visionRange: 5
+  visionRange: 8
   speed: 300
   MoveTimeBase: 0.7
   MoveTimeReal: 0
+  coolDownKB: 0.2
+  coolDownKBTimer: 0
 --- !u!114 &1677815227538073274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,4 +157,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  damage: 25
+  damage: 50
+  damagecollision: 10
