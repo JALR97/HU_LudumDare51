@@ -29,15 +29,32 @@ public class PlayerController : MonoBehaviour {
     private bool facingRight = true;
     private bool attacking;
     [SerializeField] private WeaponCodes currentWeapon = WeaponCodes.SWORD;
+    private string currentAnim;
     
     //Weapons
     public enum WeaponCodes {
         SWORD,
         AXE
     }
+    
+    //Animations
+    private const string PLAYER_IDLE = "PlayerIdle";
+    private const string PLAYER_LEFT = "PlayerWalkLeft";
+    private const string PLAYER_RIGHT = "PlayerWalkRight";
+    private const string PLAYER_DOWN = "PlayerWalkDown";
+    private const string PLAYER_UP = "PlayerWalkUp";
 
+    void ChangeAnimation(String newAnim) {
+        //Stop from playing the same anim again
+        if (currentAnim == newAnim ) { return; }
+        //Play new and set current var
+        animator.Play(newAnim);
+        currentAnim = newAnim;
+    }
+    
     private void Start() {
         ResetHealth();
+        ChangeAnimation(PLAYER_IDLE);
     }
 
     private void Update() {
@@ -98,11 +115,23 @@ public class PlayerController : MonoBehaviour {
         direction.Normalize();
         
 
-        if (direction.magnitude > 0) {
+        if (direction.magnitude > 0 && !attacking) {
             facing = direction;
             thisRigidbody.velocity = direction * (speed * Time.deltaTime);
-        //animator.SetTrigger("Moving");
+            if (direction.x > 0) {
+                ChangeAnimation(PLAYER_RIGHT);
+            }else if (direction.x < 0) {
+                ChangeAnimation(PLAYER_LEFT);
+            }else if (direction.y > 0) {
+                ChangeAnimation(PLAYER_UP);
+            }else {
+                ChangeAnimation(PLAYER_DOWN);
+            }
         }
+        else {
+            ChangeAnimation(PLAYER_IDLE);
+        }
+        
         if (direction.x > 0 && !facingRight)
         {
             Flip();
