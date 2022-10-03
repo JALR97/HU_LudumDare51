@@ -42,17 +42,21 @@ public class PlayerController : MonoBehaviour {
     }
     
     void Attack() {
-        if (facing.x < 1 && facing.x > 0) {
+        if (facing.x != 1 && facing.x != 0) {
             facing.y = 0;
             facing.Normalize();
+            Debug.Log("Diagonal");
         }
         int rotation = 0;
-        if ((int)facing.x == -1) {
+        if ((int)facing.x <= -1) {
+            Debug.Log("Left");
             rotation = 180;
         }
-        else if((int)facing.y == 1) {
+        else if((int)facing.y >= 1) {
+            Debug.Log("up");
             rotation = 90;
-        }else if((int)facing.y == -1) {
+        }else if((int)facing.y <= -1) {
+            Debug.Log("down");
             rotation = -90;
         }
         //Instantiation of the current weapon, position based on the facing direction

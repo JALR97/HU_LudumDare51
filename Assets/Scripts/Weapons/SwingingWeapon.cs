@@ -18,17 +18,18 @@ public class SwingingWeapon : MonoBehaviour
     [SerializeField] private float coolDown;
     
     //Process variables
-    private float timer;
+    private float timer = 0;
     private PlayerController playerC;
+    private bool izquierda = false;
 
     private void Awake() {
         //We deactivate the parent sprite since the players are not to see it.
         GetComponent<SpriteRenderer>().enabled = false;
         playerC = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
-        if (transform.rotation.z > 179) {
-            Vector3 temp = sprite.localScale;
-            temp.y *= -1;
-            sprite.localScale = temp;
+        
+        if ((transform.position - playerC.transform.position).x > 0) {
+            Debug.Log("Flipping");
+            izquierda = true;
         }
 
         transform.parent = playerC.gameObject.transform;
@@ -36,6 +37,9 @@ public class SwingingWeapon : MonoBehaviour
 
     private void Update() {
         var rotationSpeed = rotationCurve.Evaluate(timer / lifetime);
+        if (izquierda) {
+            rotationSpeed *= -1;
+        }
         sprite.Rotate(Vector3.back * (rotationSpeed * Time.deltaTime));
         
         timer += Time.deltaTime;
