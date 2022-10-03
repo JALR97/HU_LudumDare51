@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 6631639027861509142}
   - component: {fileID: 6631639027861509129}
   - component: {fileID: 4116786402726883634}
-  - component: {fileID: -6306020791303994013}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -34,8 +33,7 @@ Transform:
   m_LocalPosition: {x: -0.61, y: -0.39, z: 0}
   m_LocalScale: {x: 1, y: 0.92947584, z: 4.3484254}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6631639028223529315}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -103,10 +101,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 887cad3906bf56c4aafa5dad63776c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameoverUI: {fileID: 6631639027861509132}
   animator: {fileID: 6631639027861509129}
   thisRigidbody: {fileID: 6631639027861509128}
+  weapons:
+  - {fileID: 6715234828336240070, guid: 46a5059b2aaf2f642a078fd9c21ca28e, type: 3}
   speed: 500
   maxHealth: 0
+  attackRange: 5
 --- !u!50 &6631639027861509128
 Rigidbody2D:
   serializedVersion: 4
@@ -135,13 +137,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6631639027861509132}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 604a8b1b6bcf9d74cbd3f6500952f6d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 6631639027861509129}
-  attackPoint: {fileID: 6631639028223529315}
+  attackPoint: {fileID: 0}
   attackRange: 0.8
   enemyLayers:
     serializedVersion: 2
@@ -185,50 +187,3 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.8}
   m_Size: {x: 0.5, y: 0.9}
   m_Direction: 0
---- !u!114 &-6306020791303994013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6631639027861509132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06c5a9df8a7ed1847a051b37525c1972, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  knocktime: 1
-  power: 30000
-  knockedback: 0
-  attackPoint: {fileID: 0}
---- !u!1 &6631639028223529314
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6631639028223529315}
-  m_Layer: 6
-  m_Name: AttackPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6631639028223529315
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6631639028223529314}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.55, y: 0.76, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6631639027861509131}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

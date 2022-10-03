@@ -14954,6 +14954,22 @@ CircleCollider2D:
   m_Offset: {x: -0.05224228, y: -0.020438608}
   serializedVersion: 2
   m_Radius: 0.56121063
+--- !u!114 &1863123113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863123108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c5a9df8a7ed1847a051b37525c1972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knocktime: 10
+  power: 15
+  knockedback: 0
+  attackPoint: {fileID: 0}
 --- !u!1 &2011777850
 GameObject:
   m_ObjectHideFlags: 0
@@ -15259,6 +15275,14 @@ PrefabInstance:
       propertyPath: gameoverUI
       value: 
       objectReference: {fileID: 103254391}
+    - target: {fileID: 6631639027861509142, guid: f6a33cb46cf1912449e649705843d92f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6631639028223529314, guid: f6a33cb46cf1912449e649705843d92f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6631639028223529314, guid: f6a33cb46cf1912449e649705843d92f, type: 3}
       propertyPath: m_TagString
       value: Player
@@ -15325,4 +15349,5 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7472950442963235336, guid: f6a33cb46cf1912449e649705843d92f, type: 3}
+    - {fileID: -6306020791303994013, guid: f6a33cb46cf1912449e649705843d92f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f6a33cb46cf1912449e649705843d92f, type: 3}
