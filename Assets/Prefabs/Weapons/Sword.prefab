@@ -116,35 +116,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 2838290973396937784}
-  lifetime: 0.7
+  lifetime: 0.01
   damage: 50
   knockback: 15
   rotationCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 1776.6802
-      outSlope: 1776.6802
+      time: -0.37089157
+      value: 231.01503
+      inSlope: 100.68906
+      outSlope: 100.68906
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.042195544
+      outWeight: 0.37038428
     - serializedVersion: 3
-      time: 0.49373302
-      value: 201.47429
-      inSlope: 5.0262604
-      outSlope: 5.0262604
+      time: 0.5235945
+      value: 250.2245
+      inSlope: -42.55712
+      outSlope: -42.55712
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: -395.98532
-      outSlope: -395.98532
+      time: 1.2184277
+      value: 176.16246
+      inSlope: -106.589676
+      outSlope: -106.589676
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
